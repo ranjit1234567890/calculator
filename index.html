@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mynerve&family=Roboto&family=Roboto+Slab:wght@300&family=Tilt+Prism&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcualtor</title>
+    <style>
+        html,body{
+            background-size:cover;
+            background:rgb(197, 133, 133);
+            height:100%;
+            width:100%
+            font-family: 'Mynerve', cursive;
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Slab', serif;
+font-family: 'Tilt Prism', cursive;
+        }
+        .button{
+            padding:20px;
+            margin:0 3px;
+            border: 2px solid black;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 66px;
+            background-color: aquamarine;
+        }
+        .button{
+            transition:1s;
+        }
+        .button:hover{
+            background-color:black;
+            color:white;
+            
+        }
+        .row{
+            margin:8px 0;
+        }
+        .row input{
+            margin:0;
+            padding:10px 38px;
+            border: 2px solid black;
+            border-radius: 7px;
+            font-size: 20px;
+            width:220px;
+        }
+        .center{
+            text-align:center;
+        }
+        .bg-red{
+            background:rgb(241, 192, 192);
+        }
+        .max-auto{
+            margin:auto;
+        }
+        .flex{
+            display:flex;
+            
+        }
+        .flex-col{
+            flex-direction: column;
+        }
+        .items-center{
+            align-items: center;
+        }
+        .ranjit{
+            border:3px solid black;
+            width:300px;
+            height:400px;
+            border-radius:15px ;
+            margin-top: 5px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1 class="center">Welcome To Calculate Me</h1>
+    <div class="container flex flex-col bg-red mx-auto m-w-20 items-center">
+        <div class="row">
+            <div class="ranjit">
+            <input class="input" type="text"/>
+            <div class="row">
+                <button class="button">C</button>
+            <button class="button">%</button>
+            <button class="button">M+</button>
+            <button class="button">M-</button>
+        </div>
+        <div class="row">
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button class="button">*</button>
+        </div>
+        <div class="row">
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+            <button class="button">/</button>
+        </div>
+        <div class="row">
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+            <button class="button">+</button>
+        </div>
+        <div class="row">
+            <button class="button">0</button>
+            <button class="button">.</button>
+            <button class="button">=</button>
+            <button class="button">-</button>
+        </div>
+</div>
+</div>
+    </div>
+    <script>
+        let string ="";
+         let buttons = document.querySelectorAll('.button');
+         Array.from(buttons).forEach( (button)=>{
+            button.addEventListener('click', (e)=>{
+            
+            if(e.target.innerHTML== '='){
+                string =eval (string);
+                document.querySelector('input').value = string;
+            }
+
+           else if(e.target.innerHTML== 'C'){
+                string ="";
+                document.querySelector('input').value = string;
+            }
+            else{
+                console.log(e.target)
+                string = string + e.target.innerHTML;
+                document.querySelector('input').value = string;
+            }
+
+            })
+         })
+                
+    </script>
+</body>
+</html>
